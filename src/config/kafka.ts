@@ -5,6 +5,7 @@ export class KafkaBroker implements MessageBroker {
   private consumer: Consumer;
 
   constructor(clientId: string, brokers: string[]) {
+    console.log(clientId,brokers,'dffd');
     const kafka = new Kafka({ clientId, brokers });
 
     this.consumer = kafka.consumer({ groupId: clientId });
